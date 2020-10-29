@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 ListItem.propTypes = {
   item: PropTypes.object.isRequired,
@@ -9,8 +10,9 @@ ListItem.propTypes = {
 function ListItem({item}) {
   return (
     <TouchableOpacity style={styles.listItem}>
-      <View>
-        <Text>{item.text}</Text>
+      <View style={styles.listItemView}>
+        <Text style={styles.listItemText}>{item.text}</Text>
+        <Icon name="remove" color="firebrick" size={20} />
       </View>
     </TouchableOpacity>
   );
@@ -19,7 +21,7 @@ function ListItem({item}) {
 const styles = StyleSheet.create({
   listItem: {
     padding: 15,
-    backgroundColor: '#e1e1e1',
+    backgroundColor: '#f8f8f8',
     borderBottomWidth: 1,
     borderColor: '#eee',
   },
