@@ -7,12 +7,17 @@ ListItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
 
-function ListItem({item}) {
+function ListItem({item, deleteItem}) {
   return (
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}>
         <Text style={styles.listItemText}>{item.text}</Text>
-        <Icon name="remove" color="firebrick" size={20} />
+        <Icon
+          name="remove"
+          color="firebrick"
+          size={30}
+          onPress={() => deleteItem(item.id)}
+        />
       </View>
     </TouchableOpacity>
   );
